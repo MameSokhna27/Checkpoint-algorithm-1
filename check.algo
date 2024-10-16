@@ -1,0 +1,32 @@
+
+ALGORITHM lire_une_phrase
+VAR
+  phrase : STRING := '';
+  longueurphrase : INTEGER := 0;
+  nbredemots : INTEGER := 1;
+  nbrevoyelles : INTEGER := 0;
+  caractere : CHAR ;
+  
+BEGIN
+
+  REPEAT
+    Read(caractere);
+    phrase := phrase + caractere;
+    longueurphrase := longueurphrase +1;
+    IF (caractere = ' ') THEN
+      nbredemots := nbredemots +1;
+    END_IF
+    IF (caractere = 'a' OR caractere ='e' OR caractere = 'o' OR caractere = 'i' OR caractere = 'u' OR 
+      caractere = 'y' OR caractere ='A' OR caractere ='E' OR caractere ='O' OR caractere ='I' OR caractere ='U' OR caractere ='Y') THEN
+      nbrevoyelles := nbrevoyelles +1;
+    END_IF
+
+  UNTIL (caractere= '.')
+     Write("la longueur de la phrase est:" + longueurphrase);
+     Write("le nombre de mot est: " + nbredemots);
+     Write("le nombre de voyelles est: " + nbrevoyelles);
+
+
+
+    
+END
